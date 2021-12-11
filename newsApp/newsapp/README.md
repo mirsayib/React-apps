@@ -8,7 +8,9 @@ Search Feature that fetches news matching the keyword entered
 
 Styled using react-bootstrap, Material-UI, semantic-UI and Masonry
 
-what we have learnt:
+What we have learnt:
+
+
 We learnt to develop responsive web pages using REST API.
 
 
