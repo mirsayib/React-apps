@@ -29,8 +29,9 @@ export default function MovieGrid({ data }) {
                     return (
                         <Grid item xs={6} md={3} key={item.id}>
                             <Item>
-                                <div className='result-card'>
+                                <div className='media-card'>
                                     <img src={'https://image.tmdb.org/t/p/original/' + img_path} alt="" />
+                                    <h2>{item.title?item.title:item.name}</h2>
                                 </div>
                             </Item>
                         </Grid>

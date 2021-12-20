@@ -19,8 +19,9 @@ export default function PeopleGrid({ people }) {
                 {people.map(((item) => (
                     <Grid item xs={6} md={3} key={item.id}>
                         <Item>
-                            <div className='celeb-card'>
+                            <div className='media-card celeb'>
                                 <img src={'https://image.tmdb.org/t/p/original/' + item.profile_path} alt="" />
+                                <h3>{item.name}</h3>
                             </div>
                         </Item>
                     </Grid>
