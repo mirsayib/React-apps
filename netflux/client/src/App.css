@@ -199,8 +199,9 @@ img {
   justify-content: space-evenly;
 }
 .media-card {
-  margin: 60px;
+  margin: 30px;
   margin-bottom: 80px;
+  margin-top: 60px;
   position: relative;
   max-width: 280px;
   max-height: 400px;
@@ -306,9 +307,15 @@ img {
   color: white;
 }
 
-.pagination button.elipses{
+button.elipses{
+  margin: auto;
+  margin-bottom: 10px;
+  display: block;
+  padding: 10px;
   border: 0px solid white;
-  background-color: white;
+  background-color: black;
+  color: white;
+  font-weight: 700;
 }
 
 
