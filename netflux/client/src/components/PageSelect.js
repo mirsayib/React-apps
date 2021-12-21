@@ -12,22 +12,6 @@ const Pagination = ({total_pages, setPage, page}) => {
             {total_pages >= 6 && <button disabled className="elipses">Current Page: {page}</button>}
             <button onClick={() => { setPage(page < total_pages ? page + 1 : 1) }}>&raquo;</button> 
         </div>
-
-
-
-        
-
-        {/* <div className="pagination">
-            <button onClick={()=>{setPage(page > total_pages? page-1: total_pages)}}>&laquo;</button>
-            <button onClick={(e)=>{setPage(1)}}>1</button>
-            <button className="active" onClick={(e)=>{setPage(1)}}>2</button>
-            <button onClick={(e)=>{setPage(3)}}>3</button>
-            <button onClick={(e)=>{setPage(4)}}>4</button>
-            <button onClick={(e)=>{setPage(5)}}>5</button>
-            <button className="elipses">...</button>
-            <button onClick={(e)=>{setPage(total_pages)}}>{total_pages}</button>
-            <button>&raquo;</button>
-        </div> */}
     </div> );
 }
  
