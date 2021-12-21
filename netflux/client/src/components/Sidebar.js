@@ -23,7 +23,7 @@ const Sidebar = ({setSuburl, setCurrent, flag, setFlag, setIsPending}) => {
     }
     const handleClickSearch = (title) => {
         setCurrent('search')
-        setSuburl('search/multi?query=leo&page=1&include_adult=false&')
+        setSuburl('search/multi?query=leo&page=1&include_adult=true&')
         setIsPending(true)
         setFlag(!flag)
     }
@@ -68,7 +68,10 @@ const Sidebar = ({setSuburl, setCurrent, flag, setFlag, setIsPending}) => {
                     id={val.title === row ? 'active' : ''}
                     >
                         {" "}
-                        <div id="icon">{val.icon}</div>
+                    <div id="icon" onClick={() => {
+                        functionHash[val.title](val.title)
+                        setRow(val.title)
+                    }}>{val.icon}</div>
                         <div id="title" onClick={()=>{
                             functionHash[val.title](val.title)
                             setRow(val.title)

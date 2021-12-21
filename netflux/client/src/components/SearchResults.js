@@ -1,25 +1,11 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
-
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
-
 
 export default function MovieGrid({ data }) {
 
     return (
-        <Box sx={{ width: '100%' }}>
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                {data.map((item) =>{
-                    console.log(item);
+        <div className='container1'>
+            <div className='media-cards'>
+                {data.map(item => {
                     var img_path = ''
                     if(item.media_type === 'person'){
                         img_path = item.profile_path
@@ -27,21 +13,20 @@ export default function MovieGrid({ data }) {
                         img_path = item.poster_path
                     }
                     return (
-                        <Grid item xs={6} md={3} key={item.id}>
-                            <Item>
-                                <div className='media-card'>
-                                    <img src={'https://image.tmdb.org/t/p/original/' + img_path} alt="" />
-                                    <h2>{item.title?item.title:item.name}</h2>
-                                </div>
-                            </Item>
-                        </Grid>
+                        <div className='media-card' key={item.id}>
+                            <h2 className='media-card-title'>{item.title ? item.title : item.name}</h2>
+                            <img src={'https://image.tmdb.org/t/p/original/' + img_path} alt="" />
+                            <p className='media-card-desc'>
+                                {item.overview ? item.overview : "Sorry! No Media Description Available...."}
+                            </p>
+                            <div className='button'>
+                                READ MORE
+                            </div>
+                        </div>
                     )
-                    
-                }
+                })}
+            </div>
+        </div>
 
-                
-                )}
-            </Grid>
-        </Box>
     );
 }
