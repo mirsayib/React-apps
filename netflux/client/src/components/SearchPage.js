@@ -53,7 +53,6 @@ const SearchPage = ({data, query, setQuery, setSuburl}) => {
                 </div>}
 
             </div>
-
         </div> 
     );
 }

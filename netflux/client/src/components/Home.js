@@ -3,10 +3,13 @@ import GenreGrid from "./GenreGrid";
 import SearchPage from "./SearchPage";
 import { useState } from "react";
 import PeopleGrid from "./PeopleGrid";
+import Pagination from "./PageSelect";
 
 
-const Home = ({data,  setSuburl, current}) => {
+const Home = ({data,  setSuburl, current, page, setPage}) => {
   const [query, setQuery] = useState('');
+  
+  console.log(data.data);
   return (
     <div className="homepage">
         {current === 'search' && !data.isPending && !data.error  && <SearchPage data = {data.data.results} query={query} setQuery={setQuery} setSuburl={setSuburl}/>}
@@ -23,6 +26,8 @@ const Home = ({data,  setSuburl, current}) => {
           to fix this, we setPending true every time a tab is clicked so it wont be shown
           before useFetch sets it false on completing the fetch
         */}
+
+        {current !== 'genres' && !data.isPending && !data.error && <Pagination total_pages={data.data.total_pages} setPage={setPage} page={page}/>}
 
     </div>
   );

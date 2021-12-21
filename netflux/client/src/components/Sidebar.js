@@ -5,13 +5,14 @@ import logo from '../images/logo2.jpg'
 
 
 
-const Sidebar = ({setSuburl, setCurrent, flag, setFlag, setIsPending}) => {
+const Sidebar = ({setSuburl, setCurrent, flag, setFlag, setIsPending, setPage}) => {
     const [row, setRow] = useState('Home')  
     const handleClickGenre = (event) => {
         setSuburl('genre/movie/list?')
         setCurrent('genres')
         setIsPending(true)  
-        setFlag(!flag)      
+        setFlag(!flag)
+        setPage(1)    
 
     }
 
@@ -20,30 +21,35 @@ const Sidebar = ({setSuburl, setCurrent, flag, setFlag, setIsPending}) => {
         setSuburl('trending/all/week?')
         setIsPending(true)
         setFlag(!flag)
+        setPage(1)
     }
     const handleClickSearch = (title) => {
         setCurrent('search')
-        setSuburl('search/multi?query=leo&page=1&include_adult=true&')
+        setSuburl('search/multi?query=leo&include_adult=true&')
         setIsPending(true)
         setFlag(!flag)
+        setPage(1)
     }
     const handleClickMov = (title) => {
         setCurrent('movies')
         setSuburl('trending/movie/week?')
         setIsPending(true)
         setFlag(!flag)
+        setPage(1)
     }
     const handleClickTv = (title) => {
         setCurrent('tv')
         setSuburl('trending/tv/week?')
         setIsPending(true)
         setFlag(!flag)
+        setPage(1)
     }
     const handleClickPeople = (title) => {
         setCurrent('people')
         setSuburl('trending/person/week?')
         setIsPending(true)
         setFlag(!flag)
+        setPage(1)
     }
 
     const functionHash = {
