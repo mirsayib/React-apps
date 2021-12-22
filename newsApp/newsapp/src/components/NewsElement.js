@@ -9,6 +9,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Icon } from 'semantic-ui-react';
 
+
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -33,7 +34,7 @@ export default function NewsElement({element}) {
                 <CardMedia
                     component="img"
                     height="194"
-                    image={element.urlToImage}
+                    image={element.urlToImage? element.urlToImage: }
                     alt="Paella dish"
                 />
                 <CardContent>
